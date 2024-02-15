@@ -19,6 +19,7 @@ tree = app_commands.CommandTree(client)
 @tree.command(name="translate", description="Translate a message from or into Xander Talk", guild=guild)
 @app_commands.describe(message='message')
 async def translate(interaction, message: str):
+    print(message)
     await interaction.response.send_message(content=message[::-1], ephemeral=True)
 
 @client.event
