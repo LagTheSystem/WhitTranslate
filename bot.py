@@ -6,7 +6,6 @@ from discord import app_commands
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 with open('config.json', 'r') as cfg:
     data = json.load(cfg)
-pf = data["prefix"]
 
 guild = dc.Object(id=1205245019703869460)
 
