@@ -8,7 +8,7 @@ with open('config.json', 'r') as cfg:
     data = json.load(cfg)
 pf = data["prefix"]
 
-guild = dc.Object(id=919366996578140230)
+guild = dc.Object(id=1205245019703869460)
 
 intents = dc.Intents.default()
 intents.message_content = True
@@ -16,7 +16,7 @@ intents.message_content = True
 client = dc.Client(command_prefix=pf, intents=intents)
 tree = app_commands.CommandTree(client)
 
-@tree.command(name="translate", description="translate msg", guild=guild)
+@tree.command(name="translate", description="Translate a message from or into Xander Talk", guild=guild)
 @app_commands.describe(message='message')
 async def translate(interaction, message: str):
     await interaction.response.send_message(content=message[::-1], ephemeral=True)
